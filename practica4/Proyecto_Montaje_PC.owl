@@ -1,0 +1,696 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.informatica.es/ontologies/montaje-pc/"
+     xml:base="http://www.informatica.es/ontologies/montaje-pc/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:montaje-pc="http://www.informatica.es/ontologies/montaje-pc#">
+    <owl:Ontology rdf:about="http://www.informatica.es/ontologies/montaje-pc"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#esCompatibleCon -->
+
+    <owl:ObjectProperty rdf:about="http://www.informatica.es/ontologies/montaje-pc#esCompatibleCon">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#esPiezaDe -->
+
+    <owl:ObjectProperty rdf:about="http://www.informatica.es/ontologies/montaje-pc#esPiezaDe">
+        <owl:inverseOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tienePieza"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#orientadoA -->
+
+    <owl:ObjectProperty rdf:about="http://www.informatica.es/ontologies/montaje-pc#orientadoA">
+        <rdfs:domain rdf:resource="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+        <rdfs:range rdf:resource="http://www.informatica.es/ontologies/montaje-pc#RequisitoUso"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#tieneAlmacenamiento -->
+
+    <owl:ObjectProperty rdf:about="http://www.informatica.es/ontologies/montaje-pc#tieneAlmacenamiento">
+        <rdfs:subPropertyOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tienePieza"/>
+        <rdfs:range rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Almacenamiento"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#tieneCPU -->
+
+    <owl:ObjectProperty rdf:about="http://www.informatica.es/ontologies/montaje-pc#tieneCPU">
+        <rdfs:subPropertyOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tienePieza"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Procesador"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#tieneGPU -->
+
+    <owl:ObjectProperty rdf:about="http://www.informatica.es/ontologies/montaje-pc#tieneGPU">
+        <rdfs:subPropertyOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tienePieza"/>
+        <rdfs:range rdf:resource="http://www.informatica.es/ontologies/montaje-pc#TarjetaGrafica"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#tienePieza -->
+
+    <owl:ObjectProperty rdf:about="http://www.informatica.es/ontologies/montaje-pc#tienePieza">
+        <rdfs:domain rdf:resource="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+        <rdfs:range rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Componente"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#tienePlaca -->
+
+    <owl:ObjectProperty rdf:about="http://www.informatica.es/ontologies/montaje-pc#tienePlaca">
+        <rdfs:subPropertyOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tienePieza"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.informatica.es/ontologies/montaje-pc#PlacaBase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#tieneRAM -->
+
+    <owl:ObjectProperty rdf:about="http://www.informatica.es/ontologies/montaje-pc#tieneRAM">
+        <rdfs:subPropertyOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tienePieza"/>
+        <rdfs:range rdf:resource="http://www.informatica.es/ontologies/montaje-pc#MemoriaRAM"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#puntosRendimiento -->
+
+    <owl:DatatypeProperty rdf:about="http://www.informatica.es/ontologies/montaje-pc#puntosRendimiento">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Componente"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#tienePrecio -->
+
+    <owl:DatatypeProperty rdf:about="http://www.informatica.es/ontologies/montaje-pc#tienePrecio">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#Componente"/>
+                    <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#AMD -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#AMD">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Procesador"/>
+        <owl:disjointWith rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Intel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Almacenamiento -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#Almacenamiento">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Componente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Componente -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#Componente"/>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tieneAlmacenamiento"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Almacenamiento"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tieneCPU"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Procesador"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tieneGPU"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatica.es/ontologies/montaje-pc#TarjetaGrafica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tienePlaca"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatica.es/ontologies/montaje-pc#PlacaBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tieneRAM"/>
+                <owl:someValuesFrom rdf:resource="http://www.informatica.es/ontologies/montaje-pc#MemoriaRAM"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#DDR4 -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#DDR4">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#MemoriaRAM"/>
+        <owl:disjointWith rdf:resource="http://www.informatica.es/ontologies/montaje-pc#DDR5"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#DDR5 -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#DDR5">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#MemoriaRAM"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#EdicionProfesional -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#EdicionProfesional">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#RequisitoUso"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#FuenteAlimentacion -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#FuenteAlimentacion">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Componente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#GamaPresupuesto -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#GamaPresupuesto"/>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Gaming -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#Gaming">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tieneCPU"/>
+                        <owl:someValuesFrom rdf:resource="http://www.informatica.es/ontologies/montaje-pc#AMD"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tieneGPU"/>
+                        <owl:someValuesFrom rdf:resource="http://www.informatica.es/ontologies/montaje-pc#NVIDIA"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tieneRAM"/>
+                        <owl:someValuesFrom rdf:resource="http://www.informatica.es/ontologies/montaje-pc#DDR5"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#HDD -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#HDD">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Almacenamiento"/>
+        <owl:disjointWith rdf:resource="http://www.informatica.es/ontologies/montaje-pc#SSD"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Intel -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#Intel">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Procesador"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#MemoriaRAM -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#MemoriaRAM">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Componente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#NVIDIA -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#NVIDIA">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#TarjetaGrafica"/>
+        <owl:disjointWith rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Radeon"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Ofimatica -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#Ofimatica">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#RequisitoUso"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#PlacaBase -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#PlacaBase">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Componente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#PresupuestoAlto -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#PresupuestoAlto">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tienePrecio"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1500</xsd:minExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#PresupuestoBajo -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#PresupuestoBajo">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.informatica.es/ontologies/montaje-pc#tienePrecio"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">600</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#PresupuestoMedio -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#PresupuestoMedio">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Procesador -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#Procesador">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Componente"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Programacion -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#Programacion">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#RequisitoUso"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Radeon -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#Radeon">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#TarjetaGrafica"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#RequisitoUso -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#RequisitoUso"/>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#SSD -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#SSD">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Almacenamiento"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Streaming -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#Streaming">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#RequisitoUso"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#TarjetaGrafica -->
+
+    <owl:Class rdf:about="http://www.informatica.es/ontologies/montaje-pc#TarjetaGrafica">
+        <rdfs:subClassOf rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Componente"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Asus_ROG_STRIX_B650 -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#Asus_ROG_STRIX_B650">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#PlacaBase"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">250</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Core_i5_13400H -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#Core_i5_13400H">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Intel"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">230</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Core_i9_14900K -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#Core_i9_14900K">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Intel"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">600</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Corsair_Vegeance_32GB -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#Corsair_Vegeance_32GB">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#DDR5"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">120</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Kingston_Fury_DDR4_16GB -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#Kingston_Fury_DDR4_16GB">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#DDR4"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">45</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#MSI_B650_Gaming_WiFi -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#MSI_B650_Gaming_WiFi">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#PlacaBase"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">180</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Mi_PC -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#Mi_PC">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+        <montaje-pc:tieneCPU rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Ryzen_7_7800X3D"/>
+        <montaje-pc:tieneGPU rdf:resource="http://www.informatica.es/ontologies/montaje-pc#RTX_4080_Super"/>
+        <montaje-pc:tienePlaca rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Asus_ROG_STRIX_B650"/>
+        <montaje-pc:tieneRAM rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Corsair_Vegeance_32GB"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1870</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#PC_Gamer_Extremo -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#PC_Gamer_Extremo">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+        <montaje-pc:tieneAlmacenamiento rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Samsung_990_Pro_1TB"/>
+        <montaje-pc:tieneCPU rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Ryzen_9_7950X"/>
+        <montaje-pc:tieneGPU rdf:resource="http://www.informatica.es/ontologies/montaje-pc#RTX_4090"/>
+        <montaje-pc:tienePlaca rdf:resource="http://www.informatica.es/ontologies/montaje-pc#MSI_B650_Gaming_WiFi"/>
+        <montaje-pc:tieneRAM rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Corsair_Vegeance_32GB"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2760</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#PC_Oficina_Economico -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#PC_Oficina_Economico">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+        <montaje-pc:tieneAlmacenamiento rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Seagate_Barracuda_2TB"/>
+        <montaje-pc:tieneCPU rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Core_i5_13400H"/>
+        <montaje-pc:tienePlaca rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Asus_ROG_STRIX_B650"/>
+        <montaje-pc:tieneRAM rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Kingston_Fury_DDR4_16GB"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">585</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#RTX_4060_Ti -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#RTX_4060_Ti">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#NVIDIA"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#RTX_4080_Super -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#RTX_4080_Super">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#NVIDIA"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1100</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#RTX_4090 -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#RTX_4090">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#NVIDIA"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1800</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#RX_7600_XT -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#RX_7600_XT">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Radeon"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">330</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#RX_7900_XT -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#RX_7900_XT">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#Radeon"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">950</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Ryzen_5_7600 -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#Ryzen_5_7600">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#AMD"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">200</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Ryzen_7_7800X3D -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#Ryzen_7_7800X3D">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#AMD"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">400</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Ryzen_9_7950X -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#Ryzen_9_7950X">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#AMD"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">550</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Samsung_990_Pro_1TB -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#Samsung_990_Pro_1TB">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#SSD"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">110</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.informatica.es/ontologies/montaje-pc#Seagate_Barracuda_2TB -->
+
+    <owl:NamedIndividual rdf:about="http://www.informatica.es/ontologies/montaje-pc#Seagate_Barracuda_2TB">
+        <rdf:type rdf:resource="http://www.informatica.es/ontologies/montaje-pc#HDD"/>
+        <montaje-pc:tienePrecio rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">60</montaje-pc:tienePrecio>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#Almacenamiento"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#FuenteAlimentacion"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#MemoriaRAM"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#PlacaBase"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#Procesador"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#TarjetaGrafica"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#Componente"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#ConfiguracionPC"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#GamaPresupuesto"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#RequisitoUso"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#EdicionProfesional"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#Gaming"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#Ofimatica"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#Programacion"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#Streaming"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#PresupuestoAlto"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#PresupuestoBajo"/>
+            <rdf:Description rdf:about="http://www.informatica.es/ontologies/montaje-pc#PresupuestoMedio"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
